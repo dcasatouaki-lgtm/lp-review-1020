@@ -1,6 +1,6 @@
 'use strict';
 const risk='痛み・腫れ・内出血・むくみ・ひきつれ・不快感・凹凸・左右差など。';
-document.querySelector('#case-list').innerHTML=['03','01','06','04'].map(n=>'<figure class="case-item"><img src="assets/images/official-case-'+n+'.jpg" alt="脂肪吸引注射・糸リフト併用の症例写真" loading="lazy"><figcaption class="case-caption"><p>施術：脂肪吸引注射＋糸リフト</p><p>料金：確認中（税込）／撮影時期：確認中</p><p class="case-risk">主なリスク：'+risk+'</p><p class="case-risk">効果・経過には個人差があります。</p></figcaption></figure>').join('');
+var casePrices={'03':'116,000','01':'238,400','06':'238,400','04':'116,000'};document.querySelector('#case-list').innerHTML=['03','01','06','04'].map(n=>'<figure class="case-item"><img src="assets/images/official-case-'+n+'.jpg" alt="脂肪吸引注射・糸リフト併用の症例写真" loading="lazy"><figcaption class="case-caption"><p>施術：脂肪吸引注射＋糸リフト</p><p>料金：'+casePrices[n]+'円（税込）</p><p class="case-risk">主なリスク：'+risk+'</p><p class="case-risk">効果・経過には個人差があります。</p></figcaption></figure>').join('');
 const profile='<svg viewBox="0 0 260 195" aria-hidden="true"><path d="M155 20 C120 17 104 38 108 60 L100 80 87 91 Q82 96 97 99 L97 113 Q95 128 116 133 L129 136 128 163 Q150 174 188 164" fill="#f1d5c8" stroke="#a98483" stroke-width="2"/><path d="M155 20 Q205 12 202 74 L187 135 188 164" fill="#d7bfd4" stroke="#a984a1" stroke-width="2"/><path d="M108 58 Q127 50 143 58 M112 70 L124 70" fill="none" stroke="#a98483" stroke-width="2"/><path d="M116 133 Q145 135 157 113" fill="none" stroke="#754565" stroke-width="3" stroke-dasharray="4 4"/></svg>';
 const arts=[
  profile+'<span class="dlabel" style="left:13px;bottom:20px">顎下（あご下）</span><span class="dlabel" style="right:12px;top:80px">頬下</span>',
@@ -20,7 +20,7 @@ if(track){track.addEventListener('scroll',updateSlide,{passive:true});prev.oncli
 const faqs=[
 ['ダウンタイムはどのくらいですか？','1週間〜1か月程度が目安です。腫れ・むくみ・内出血などが生じることがあります。経過には個人差があります。'],
 ['何回くらい受ける施術ですか？','基本は1回です。脂肪の量によっては、追加の施術をご提案することがあります。'],
-['術後の生活で気をつけることは？','当日は首から下のシャワーが可能です。翌日から洗顔・メイク・全身のシャワーが可能です。2〜3日後に固定バンドを外せる目安です。1週間後から入浴・飲酒・運動が可能です。1〜3か月は寝るときだけ固定バンドを着用します。'],
+['術後の生活で気をつけることは？','当日は首から下のシャワーが可能です。翌日から洗顔・メイク・全身のシャワーが可能です。1週間後から入浴・飲酒・運動が可能です。'],
 ['カウンセリングに費用はかかりますか？','カウンセリングは無料です。'],
 ['施術を受けられない場合はありますか？','妊娠中の方、心臓・腎臓に疾患のある方、貧血の方などは施術を受けられません。診察時にご確認ください。'],
 ['主なリスク・副作用は？',risk+'自由診療です。効果・仕上がりには個人差があります。']];
